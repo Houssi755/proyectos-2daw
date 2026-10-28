@@ -1,12 +1,9 @@
-/*variables del sistema de diseño del figma que no venian en variables.css*/
 :root {
-  /*primitivas que faltaban*/
   --color-tinta-700: #2c4373;
   --color-tinta-100: #c9d3e6;
   --color-sol-600: #e9a31a;
   --color-ola-600: #1e7b70;
 
-  /*semanticas, son las que uso en el css*/
   --fondo-pagina: var(--color-fondo);
   --fondo-superficie: var(--color-superficie);
   --fondo-oscuro: var(--color-tinta);
@@ -39,7 +36,6 @@
 }
 
 
-/*pie siempre abajo: body en columna y el main crece*/
 body {
   display: flex;
   flex-direction: column;
@@ -127,7 +123,7 @@ main {
   align-items: center;
 }
 
-/*el menu ocupa el hueco del medio*/
+
 .menu {
   flex: 1;
 }
@@ -138,7 +134,7 @@ main {
   font-weight: var(--peso-fuerte);
 }
 
-/*menu en fila*/
+
 .menu__lista {
   display: flex;
   justify-content: center;
@@ -238,7 +234,7 @@ main {
   border-radius: var(--radio-tarjeta) var(--radio-tarjeta) 0 0;
 }
 
-/*colores como el figma, con nth-child cojo cada tarjeta por su numero*/
+/*colores del el figma, con nth-child cojo cada tarjeta por su numero*/
 .tarjeta:nth-child(2) .tarjeta__imagen,
 .tarjeta:nth-child(6) .tarjeta__imagen {
   background-color: var(--decorativo-2);
@@ -275,7 +271,7 @@ main {
   color: var(--texto-secundario);
 }
 
-/*con margin-top auto el boton baja*/
+/*con margin top auto el boton baja*/
 .tarjeta__boton {
   margin-top: auto;
 }
@@ -296,7 +292,7 @@ main {
   margin-bottom: var(--espacio-5);
 }
 
-/*el inverso: con order -1 la imagen pasa a la izquierda sin tocar el html*/
+
 .bloque--inverso .bloque__visual {
   order: -1;
 }
@@ -360,7 +356,7 @@ main {
   border-color: var(--accion-primaria);
 }
 
-/*align-self para que no se estire a lo ancho*/
+/*el align self para que no se estire ancho*/
 .plan__etiqueta {
   align-self: flex-start;
   padding: 0 var(--espacio-2);
@@ -402,7 +398,7 @@ main {
   font-size: var(--texto-s);
 }
 
-/*grid porque son 4 columnas, la de marca el doble*/
+
 .pie__interior {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
