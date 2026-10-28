@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="t d">
+<title id="t">Ventana de aplicación web</title><desc id="d">Ilustración de una ventana que transforma código JSP en una página web.</desc>
+<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#ffbd73"/><stop offset="1" stop-color="#ffe4bd"/></linearGradient></defs>
+<rect x="80" y="70" width="480" height="340" rx="34" fill="#fff" opacity=".96"/>
+<rect x="80" y="70" width="480" height="68" rx="34" fill="#dfe6ff"/><circle cx="125" cy="104" r="10" fill="#ff7a8a"/><circle cx="157" cy="104" r="10" fill="#ffc857"/><circle cx="189" cy="104" r="10" fill="#51c7a8"/>
+<rect x="125" y="178" width="160" height="150" rx="24" fill="url(#g)"/><path d="M165 222h82M165 250h62M165 278h74" stroke="#7c4b1f" stroke-width="13" stroke-linecap="round"/>
+<path d="M330 210h135M330 252h105M330 294h150" stroke="#3157d5" stroke-width="18" stroke-linecap="round"/><path d="M265 358h110" stroke="#7486e8" stroke-width="16" stroke-linecap="round"/>
+</svg>

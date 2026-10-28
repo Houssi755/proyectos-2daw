@@ -1,0 +1,2 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t"><title id="t">Portada geométrica azul</title><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#15243b"/><stop offset="1" stop-color="#247788"/></linearGradient></defs><rect width="800" height="500" fill="url(#g)"/><circle cx="615" cy="120" r="150" fill="#72d6c7" opacity=".28"/><path d="M0 390L270 135l190 180 105-105 235 220v70H0z" fill="#f2cb73" opacity=".9"/><path d="M95 105h270v18H95zm0 42h190v12H95z" fill="#fff" opacity=".85"/></svg>
+

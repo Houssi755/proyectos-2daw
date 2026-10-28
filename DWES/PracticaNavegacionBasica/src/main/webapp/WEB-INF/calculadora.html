@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora</title>
+<link rel="stylesheet" href="css/calculadora.css">
+</head>
+<body>
+  <main class="tarjeta">
+    <h1>Calculadora</h1>
+
+    <form action="calculadora" method="post">
+      <label for="num1">Primer número</label>
+      <input type="text" id="num1" name="num1" inputmode="decimal" required autofocus>
+
+      <label for="operacion">Operación</label>
+      <select id="operacion" name="operacion" required>
+        <option value="suma">Suma (+)</option>
+        <option value="resta">Resta (−)</option>
+        <option value="multiplicacion">Multiplicación (×)</option>
+        <option value="division">División (÷)</option>
+      </select>
+
+      <label for="num2">Segundo número</label>
+      <input type="text" id="num2" name="num2" inputmode="decimal" required>
+
+      <button type="submit" class="boton">Calcular</button>
+    </form>
+  </main>
+</body>
+</html>

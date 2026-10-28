@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="ResumenAlumnoServlet" method="get">
+    <label>Nombre: <input name="nombre" type="text" required></label>
+    <label>Edad: <input name="edad" type="number" min="16" max="99"></label>
+    <label>Fecha: <input name="fecha" type="date"></label>
+    <p>Turno:</p>
+    <label><input name="turno" type="radio" value="manana"> Mañana</label>
+    <label><input name="turno" type="radio" value="tarde"> Tarde</label>
+    <label><input name="activo" type="checkbox" value="si"> Matrícula activa</label>
+    <select name="ciclo">
+        <option value="daw">DAW</option>
+        <option value="dam">DAM</option>
+        <option value="asir">ASIR</option>
+    </select>
+    <p>Lenguajes que conoces:</p>
+		<label><input type="checkbox" name="lenguajes" value="java"> Java</label>
+		<label><input type="checkbox" name="lenguajes" value="javascript"> JavaScript</label>
+		<label><input type="checkbox" name="lenguajes" value="python"> Python</label>
+		<label><input type="checkbox" name="lenguajes" value="php"> PHP</label>
+    <button type="submit">Enviar</button>
+</form>
+</body>
+</html>
