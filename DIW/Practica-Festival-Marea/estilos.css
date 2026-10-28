@@ -1,0 +1,433 @@
+/*variables del sistema de diseño del figma que no venian en variables.css*/
+:root {
+  /*primitivas que faltaban*/
+  --color-tinta-700: #2c4373;
+  --color-tinta-100: #c9d3e6;
+  --color-sol-600: #e9a31a;
+  --color-ola-600: #1e7b70;
+
+  /*semanticas, son las que uso en el css*/
+  --fondo-pagina: var(--color-fondo);
+  --fondo-superficie: var(--color-superficie);
+  --fondo-oscuro: var(--color-tinta);
+
+  --texto-principal: var(--color-tinta);
+  --texto-secundario: var(--color-tinta-suave);
+  --texto-sobre-oscuro: var(--color-tinta-100);
+  --texto-inverso: var(--color-superficie);
+  --texto-acento: var(--color-ola-600);
+
+  --accion-primaria: var(--color-sol);
+  --accion-primaria-hover: var(--color-sol-600);
+  --accion-secundaria: var(--color-ola);
+  --accion-secundaria-hover: var(--color-ola-600);
+  --accion-oscura: var(--color-tinta);
+  --accion-oscura-hover: var(--color-tinta-700);
+
+  --borde-defecto: var(--color-borde);
+  --borde-sobre-oscuro: var(--color-tinta-suave);
+  --borde-inverso: var(--color-superficie);
+
+  --decorativo-1: var(--color-ola);
+  --decorativo-2: var(--color-sol);
+  --decorativo-3: var(--color-coral);
+  --decorativo-4: var(--color-tinta-suave);
+
+  --espacio-seccion: var(--espacio-7);
+  --radio-boton: var(--radio-pildora);
+  --radio-tarjeta: var(--radio-m);
+}
+
+
+/*pie siempre abajo: body en columna y el main crece*/
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+
+/*botones*/
+
+.contenedor {
+  max-width: var(--ancho-contenedor);
+  margin: 0 auto;
+}
+
+.boton {
+  display: inline-block;
+  text-align: center;
+  padding: var(--espacio-2) var(--espacio-4);
+  border-radius: var(--radio-boton);
+  font-size: var(--texto-s);
+  font-weight: var(--peso-fuerte);
+}
+
+.boton--sol {
+  background-color: var(--accion-primaria);
+  color: var(--texto-principal);
+}
+
+.boton--sol:hover {
+  background-color: var(--accion-primaria-hover);
+}
+
+.boton--borde {
+  border: 1px solid var(--borde-inverso);
+  color: var(--texto-inverso);
+}
+
+.boton--borde:hover {
+  background-color: var(--fondo-superficie);
+  color: var(--texto-principal);
+}
+
+.boton--oscuro {
+  background-color: var(--accion-oscura);
+  color: var(--texto-inverso);
+}
+
+.boton--oscuro:hover {
+  background-color: var(--accion-oscura-hover);
+}
+
+.boton--ola {
+  background-color: var(--accion-secundaria);
+  color: var(--texto-inverso);
+}
+
+.boton--ola:hover {
+  background-color: var(--accion-secundaria-hover);
+}
+
+.seccion__titulo {
+  font-size: var(--texto-2xl);
+  margin-bottom: var(--espacio-4);
+}
+
+
+/*cabecera*/
+
+/*sticky para que se quede arriba al bajar*/
+.cabecera {
+  position: sticky;
+  top: 0;
+  background-color: var(--fondo-superficie);
+  padding: var(--espacio-3) 0;
+}
+
+/*flex porque va todo en fila*/
+.cabecera__interior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*el menu ocupa el hueco del medio*/
+.menu {
+  flex: 1;
+}
+
+.logo {
+  font-family: var(--fuente-titulo);
+  font-size: var(--texto-xl);
+  font-weight: var(--peso-fuerte);
+}
+
+/*menu en fila*/
+.menu__lista {
+  display: flex;
+  justify-content: center;
+  gap: var(--espacio-6);
+}
+
+
+/*hero*/
+
+.hero {
+  background-color: var(--fondo-oscuro);
+  color: var(--texto-inverso);
+  padding: var(--espacio-8) 0;
+}
+
+/*flex en columna para centrarlo*/
+.hero__interior {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--espacio-4);
+}
+
+.hero__titulo {
+  font-size: var(--texto-3xl);
+}
+
+.hero__texto {
+  color: var(--texto-sobre-oscuro);
+}
+
+.hero__acciones {
+  display: flex;
+  gap: var(--espacio-3);
+}
+
+
+/*datos*/
+
+.datos {
+  background-color: var(--fondo-superficie);
+  padding: var(--espacio-5) 0;
+  margin-top: var(--espacio-5);
+}
+
+/*grid porque son columnas iguales*/
+.datos__lista {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+
+.dato__valor {
+  display: block;
+  font-family: var(--fuente-titulo);
+  font-size: var(--texto-xl);
+}
+
+.dato__etiqueta {
+  font-size: var(--texto-xs);
+  color: var(--texto-secundario);
+}
+
+
+/*cartel*/
+
+.cartel {
+  padding: var(--espacio-seccion) 0;
+}
+
+/*grid porque son filas y columnas*/
+.cartel__rejilla {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espacio-4);
+}
+
+/*flex en columna*/
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--fondo-superficie);
+  border: 1px solid var(--borde-defecto);
+  border-radius: var(--radio-tarjeta);
+}
+
+/*hover*/
+.tarjeta:hover {
+  box-shadow: var(--sombra-fuerte);
+}
+
+/*redondeo solo arriba*/
+.tarjeta__imagen {
+  height: 180px;
+  background-color: var(--decorativo-1);
+  border-radius: var(--radio-tarjeta) var(--radio-tarjeta) 0 0;
+}
+
+/*colores como el figma, con nth-child cojo cada tarjeta por su numero*/
+.tarjeta:nth-child(2) .tarjeta__imagen,
+.tarjeta:nth-child(6) .tarjeta__imagen {
+  background-color: var(--decorativo-2);
+}
+
+.tarjeta:nth-child(3) .tarjeta__imagen {
+  background-color: var(--decorativo-3);
+}
+
+.tarjeta:nth-child(4) .tarjeta__imagen {
+  background-color: var(--decorativo-4);
+}
+
+.tarjeta__cuerpo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--espacio-2);
+  padding: var(--espacio-4);
+}
+
+.tarjeta__titulo {
+  font-size: var(--texto-l);
+}
+
+.tarjeta__estilo {
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-fuerte);
+  color: var(--texto-acento);
+}
+
+.tarjeta__texto {
+  font-size: var(--texto-s);
+  color: var(--texto-secundario);
+}
+
+/*con margin-top auto el boton baja*/
+.tarjeta__boton {
+  margin-top: auto;
+}
+
+
+/*escenarios*/
+
+.escenarios {
+  padding: var(--espacio-seccion) 0;
+}
+
+/*grid porque son 2 columnas*/
+.bloque {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--espacio-6);
+  margin-bottom: var(--espacio-5);
+}
+
+/*el inverso: con order -1 la imagen pasa a la izquierda sin tocar el html*/
+.bloque--inverso .bloque__visual {
+  order: -1;
+}
+
+.bloque__titulo {
+  font-size: var(--texto-xl);
+  margin-bottom: var(--espacio-3);
+}
+
+.bloque__texto p {
+  color: var(--texto-secundario);
+  margin-bottom: var(--espacio-4);
+}
+
+.bloque__visual {
+  height: 300px;
+  border-radius: var(--radio-tarjeta);
+}
+
+.bloque__visual--playa {
+  background-color: var(--decorativo-1);
+}
+
+.bloque__visual--pinar {
+  background-color: var(--decorativo-2);
+}
+
+
+/*entradas*/
+
+.entradas {
+  padding: var(--espacio-seccion) 0;
+}
+
+/*grid igual que el cartel*/
+.planes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espacio-4);
+}
+
+/*flex en columna para bajar el boton*/
+.plan {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-2);
+  min-height: 420px;
+  padding: var(--espacio-4);
+  background-color: var(--fondo-superficie);
+  border: 1px solid var(--borde-defecto);
+  border-radius: var(--radio-tarjeta);
+}
+
+.plan:hover {
+  box-shadow: var(--sombra-fuerte);
+}
+
+.plan--destacado {
+  background-color: var(--fondo-oscuro);
+  color: var(--texto-inverso);
+  border-color: var(--accion-primaria);
+}
+
+/*align-self para que no se estire a lo ancho*/
+.plan__etiqueta {
+  align-self: flex-start;
+  padding: 0 var(--espacio-2);
+  border-radius: var(--radio-boton);
+  background-color: var(--accion-primaria);
+  color: var(--texto-principal);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-fuerte);
+}
+
+.plan__nombre {
+  font-size: var(--texto-l);
+}
+
+.plan__precio {
+  font-family: var(--fuente-titulo);
+  font-size: var(--texto-2xl);
+  font-weight: var(--peso-fuerte);
+}
+
+.plan--destacado .plan__precio {
+  color: var(--accion-primaria);
+}
+
+.plan__lista {
+  font-size: var(--texto-s);
+}
+
+.plan__boton {
+  margin-top: auto;
+}
+
+
+/*pie*/
+
+.pie {
+  background-color: var(--fondo-oscuro);
+  color: var(--texto-inverso);
+  font-size: var(--texto-s);
+}
+
+/*grid porque son 4 columnas, la de marca el doble*/
+.pie__interior {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--espacio-5);
+  padding: var(--espacio-5) 0;
+}
+
+.pie__titulo {
+  font-size: var(--texto-m);
+  margin-bottom: var(--espacio-2);
+}
+
+.pie__lista {
+  color: var(--texto-sobre-oscuro);
+}
+
+.pie__legal {
+  border-top: 1px solid var(--borde-sobre-oscuro);
+  padding: var(--espacio-3) 0;
+  font-size: var(--texto-xs);
+  color: var(--texto-sobre-oscuro);
+}
+
+/*flex para poner un texto a cada lado*/
+.pie__legal-interior {
+  display: flex;
+  justify-content: space-between;
+}
