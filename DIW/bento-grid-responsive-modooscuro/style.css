@@ -1,0 +1,289 @@
+:root {
+  /* para que el navegador sepa que hay modo claro y oscuro */
+  color-scheme: light dark;
+
+  /* primitivas: los colores tal cual, no cambian */
+  --color-blanco: white;
+  --color-gris-claro: hsl(0, 0%, 96%);
+  --color-gris-oscuro: hsl(0, 0%, 15%);
+  --color-negro: hsl(0, 0%, 7%);
+
+  /* semanticas: las que uso en el css, son las que cambian en modo oscuro */
+  --color-fondo: var(--color-gris-claro);
+  --color-tarjeta: var(--color-blanco);
+  --color-texto-principal: var(--color-negro);
+}
+
+/* quito márgenes por defecto y con border-box el padding no me agranda las cajas */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  color: hsl(0, 0%, 7%);
+  background-color: var(--color-fondo);
+  padding: 80px 32px;
+}
+
+/* para que las imágenes no se salgan de su caja */
+img {
+  max-width: 100%;
+}
+
+h1,
+h2 {
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-size: 34px;
+}
+
+/* colores para palabras sueltas (10x y quicker) */
+.amarillo {
+  color: hsl(39, 100%, 71%);
+}
+
+.morado {
+  color: hsl(256, 67%, 59%);
+}
+
+
+/* GRID  */
+
+/* 4 columnas y 10 filas */
+.contenedor {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(10, 64px);
+  gap: 32px;
+  max-width: 1120px;
+  margin: 0 auto;
+  /* cada línea es una fila, si repito el nombre la tarjeta ocupa más */
+  grid-template-areas:
+    "crear  hero         hero        programar"
+    "crear  hero         hero        programar"
+    "crear  hero         hero        programar"
+    "crear  hero         hero        programar"
+    "crear  plataformas  constante   programar"
+    "ia     plataformas  constante   programar"
+    "ia     plataformas  constante   programar"
+    "ia     crecimiento  seguidores  seguidores"
+    "ia     crecimiento  seguidores  seguidores"
+    "ia     crecimiento  seguidores  seguidores";
+}
+
+/* meto cada tarjeta en su hueco */
+.hero        { grid-area: hero; }
+.plataformas { grid-area: plataformas; }
+.constante   { grid-area: constante; }
+.programar   { grid-area: programar; }
+.seguidores  { grid-area: seguidores; }
+.crecimiento { grid-area: crecimiento; }
+.crear       { grid-area: crear; }
+.ia          { grid-area: ia; }
+
+/* lo que tienen todas las tarjetas */
+.tarjeta {
+  padding: 24px;
+  border-radius: 10px;
+  overflow: hidden; /* así lo que sobresale se corta */
+}
+
+
+/* TARJETAS */
+
+/* la grande morada del centro */
+.hero {
+  background-color: hsl(256, 67%, 59%);
+  color: white;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.hero h1 {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.hero img {
+  width: 190px;
+  margin-bottom: 10px;
+}
+
+/* manage multiple accounts */
+.plataformas {
+  background-color: var(--color-tarjeta);
+  color: var(--color-texto-principal);
+}
+
+.plataformas img {
+  max-width: 350px; /* más ancha que la tarjeta para que se corte como en el diseño */
+  margin-bottom: 16px;
+}
+
+/* consistent posting schedule */
+.constante {
+  background-color: hsl(39, 100%, 71%);
+}
+
+.constante img {
+  width: 220px;
+  margin-top: 16px;
+}
+
+/* schedule to social media (la alta de la derecha) */
+.programar {
+  background-color: hsl(254, 88%, 90%);
+  padding: 32px;
+}
+
+.programar img {
+  max-width: 340px;
+  margin: 20px 0;
+}
+
+.programar p {
+  font-size: 16px;
+}
+
+/* grow followers: aquí hago otro grid de 2 columnas, foto a la izquierda y texto a la derecha */
+.seguidores {
+  background-color: hsl(256, 67%, 59%);
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 24px;
+}
+
+.seguidores h2 {
+  font-size: 40px;
+}
+
+.crecimiento {
+  background-color: var(--color-tarjeta);
+  color: var(--color-texto-principal);
+}
+
+.crecimiento h2 {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.crecimiento img {
+  width: 180px;
+  margin-top: 20px;
+}
+
+/* create and schedule content */
+.crear {
+  background-color: hsl(31, 66%, 93%);
+  padding: 70px 32px;
+}
+
+.crear h2 {
+  font-size: 40px;
+}
+
+.crear img {
+  width: 190px;
+  margin-top: 20px;
+}
+
+/* write your content using AI */
+.ia {
+  background-color: hsl(39, 100%, 71%);
+}
+
+.ia h2 {
+  font-size: 40px;
+}
+
+.ia img {
+  width: 280px;
+  margin-top: 50px;
+}
+
+
+/* MOVIL */
+
+/* desktop first: hasta 1024px lo pongo todo en una columna */
+@media (max-width: 1024px) {
+
+  body {
+    padding: 24px 16px;
+  }
+
+  /* una columna y cada tarjeta en una fila, en el orden del diseño movil */
+  .contenedor {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 24px;
+    max-width: 500px;
+    grid-template-areas:
+      "hero"
+      "plataformas"
+      "constante"
+      "programar"
+      "seguidores"
+      "crecimiento"
+      "crear"
+      "ia";
+  }
+
+  /* en movil estas dos imagenes se ven enteras, no cortadas */
+  .plataformas img,
+  .programar img {
+    max-width: 100%;
+  }
+
+  /* aqui ya no caben 2 columnas, la foto arriba y el texto abajo */
+  .seguidores {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* MODO OSCURO */
+
+/* si no he pulsado el boton manda el ordenador */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-fondo: var(--color-negro);
+    --color-tarjeta: var(--color-gris-oscuro);
+    --color-texto-principal: var(--color-blanco);
+  }
+}
+
+/* si con el boton elijo oscuro */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-fondo: var(--color-negro);
+  --color-tarjeta: var(--color-gris-oscuro);
+  --color-texto-principal: var(--color-blanco);
+}
+
+/* si con el boton elijo claro */
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* el boton de cambiar tema, centrado arriba */
+.boton-tema {
+  display: block;
+  margin: 0 auto 24px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background-color: hsl(256, 67%, 59%);
+  color: white;
+  font-family: inherit;
+  cursor: pointer;
+}
